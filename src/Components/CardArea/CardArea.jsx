@@ -5,14 +5,19 @@ import Loading from "../../assets/Bean Eater-0.9s-237px.svg"
 import axios from 'axios';
 import {ContextProvider} from "../../Context/Context"
 const CardArea = (props) => {
-    const {sortState, pageNumber, handlePageDown,handlePageUP} = useContext(ContextProvider);
+    const {sortState, pageNumber, handlePageDown,handlePageUP,didCached,setDidCached,gameCards,setGameCards} = useContext(ContextProvider);
 
-    const [gameCards, setGameCards] = useState([]);
+
 
     useEffect(()=>{
+        if(didCached === false){
         setGameCards([])
         axios.get(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15&pageSize=12&pageNumber=${pageNumber}&sortBy=${sortState}`)
         .then(response=>setGameCards(response.data))
+        setDidCached(true)
+        }
+
+
     },[pageNumber,sortState])
 
     return (

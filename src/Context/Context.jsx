@@ -14,6 +14,7 @@ const Context = ({children}) => {
     // Page Number State Functions
     const [pageNumber , setPageNumber] = useState(0);
     const handlePageUP = ()=>{
+        setDidCached(false)
         let currentPage = pageNumber
         currentPage++
         setPageNumber(currentPage);
@@ -25,11 +26,16 @@ const Context = ({children}) => {
             currentPage = 0
         }
         setPageNumber(currentPage);
+                setDidCached(false)
     }
+    // Home Page Cached Cards
+    const [didCached, setDidCached] = useState(false)
 
+    //Game Cards
+     const [gameCards, setGameCards] = useState([]);
 
     return (
-        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown}}>
+        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,didCached,setDidCached,setGameCards,gameCards}}>
             {children}
         </ContextProvider.Provider>
     );
