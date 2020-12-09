@@ -1,0 +1,117 @@
+
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    flex-wrap: wrap;
+}
+.Big__Image__Area{
+    width: 90%;
+    height: 100%;
+    min-width: 280px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.Big__Image{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius:2rem ;
+    margin-bottom: 0;
+    padding: 0;
+
+}
+.Info__Area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 4rem;
+    color: #f8f8f8;
+    font-weight: 700;
+
+}
+.Info__Left{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 1rem;
+    color: #585858;
+}
+.Info__Right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 1rem;
+    background-color: #8f8f8f;
+    border-radius: 1rem;
+    width: 40%;
+
+}
+.Release__Date{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.Score{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.Tag__Area{
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid #f8f8f8 ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.Tag__Area span{
+    padding: .5rem;
+    background-color: #F2A72D;
+    margin: 0.1rem;
+    border-radius: .8rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #f8f8f8;
+    letter-spacing: 1px;
+}
+
+.Mini__Image__Area{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid #8f8f8f;
+    min-width: 280px;
+
+
+
+}
+.Mini__Image{
+    width: 15%;
+    margin: 0.1rem;
+    cursor: pointer;
+}
+
+@media (max-width :768px){
+    .Info__Area{
+        flex-direction: column;
+    }
+    .Info__Left{
+        width: 100%;
+    }
+    .Info__Right{
+        width: 100%;
+    }
+    .Mini__Image{
+        width: 20%;
+    }
+}
+
+
+
+
+

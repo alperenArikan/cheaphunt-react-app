@@ -1,0 +1,23 @@
+.Deals__Bar {
+  background-color: #535353;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  word-wrap: none;
+}
+
+.Banner__Area {
+  background-color: #f2a72d;
+  margin-right: auto;
+  display: inline-block;
+  z-index: 2;
+  word-wrap: none;
+  flex-shrink: 0;
+}
+.Banner__Text {
+  width: 100%;
+  color: #f9f9f9;
+  padding: 0.8rem 0.5rem;
+  font-size: 1rem;
+  word-wrap: none;
+}

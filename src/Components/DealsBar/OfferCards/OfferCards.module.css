@@ -1,0 +1,56 @@
+.Offer__Card {
+  height: 2rem;
+  background-color: #383838;
+  display: flex;
+  margin: 0 2rem;
+  align-items: center;
+  font-size: 10px;
+  width: 35%;
+  min-width: 200px;
+  animation: slide 300s linear infinite;
+  padding-left: 0.1rem;
+  color: #f9f9f9;
+}
+
+.Offer__Name {
+  color: #f9f9f9;
+  width: 68%;
+  display: flex;
+}
+.Offer__Name p {
+  display: inline-block;
+  color: #f9f9f9;
+  width: 100%;
+  word-wrap: none;
+  height: 100%;
+  font-size: 0.8rem;
+}
+
+.Offer__Price {
+  background-color: #f2a72d;
+  margin: 0 0.2rem;
+  padding: 0.1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Offer__Price__Old {
+  color: #f9f9f9;
+  padding: 0.18rem;
+  text-decoration: line-through;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+@keyframes slide {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-10000px);
+  }
+}

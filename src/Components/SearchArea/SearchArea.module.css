@@ -1,0 +1,32 @@
+.Search__Input{
+    border: 3px solid #8F8F8F;
+    height:3rem;
+    width: 15rem;
+    background-color: #383838;
+    color: #fff;
+    border-radius: .5rem;
+  }
+  .Search__Input:focus{
+  
+    outline: none;
+  
+  }
+  .Search__Button{
+    border: none;
+  }
+  .Game__Search__Form{
+    
+    margin: 0  auto;
+    position: relative;
+  }
+  .Search__Input{
+    margin: 0 auto;
+  }
+  .Search__Area{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  
+  
