@@ -2,6 +2,9 @@ import React , {createContext, useState} from 'react';
 export const ContextProvider = createContext();
 
 const Context = ({children}) => {
+    // User Logged in ? 
+    const [didLogIn, setLogin] = useState(false)
+    const [user,setUser] = useState(null)
     // Filter State Functions 
     const [sortState, setSortState] =  useState("Deal Rating")
     const handleSetSortStatus = (event)=>{
@@ -14,7 +17,7 @@ const Context = ({children}) => {
     // Page Number State Functions
     const [pageNumber , setPageNumber] = useState(0);
     const handlePageUP = ()=>{
-        setDidCached(false)
+
         let currentPage = pageNumber
         currentPage++
         setPageNumber(currentPage);
@@ -26,16 +29,16 @@ const Context = ({children}) => {
             currentPage = 0
         }
         setPageNumber(currentPage);
-                setDidCached(false)
-    }
-    // Home Page Cached Cards
-    const [didCached, setDidCached] = useState(false)
 
+    }
     //Game Cards
      const [gameCards, setGameCards] = useState([]);
 
+    //User Profile Data
+    const [userProfileData,setUserProfileData]= useState(null);
+
     return (
-        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,didCached,setDidCached,setGameCards,gameCards}}>
+        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,setGameCards,gameCards,didLogIn,setLogin,setUser,user,userProfileData,setUserProfileData}}>
             {children}
         </ContextProvider.Provider>
     );

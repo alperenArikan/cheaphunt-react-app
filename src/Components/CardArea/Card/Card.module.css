@@ -1,75 +1,78 @@
-.Card__Container{
-    width: 33%;
-    padding: 1rem;
-    min-width: 300px;
-
+.Card__Container {
+  width: 33%;
+  padding: 1rem;
+  min-width: 300px;
 }
-.Game__Card{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 3px 3px 8px 3px #8f8f8f;
-    border-radius: 1rem;
-    
-
+.Game__Card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 8px 3px #8f8f8f;
+  border-radius: 1rem;
+  position: relative;
 }
-.Image__Area{
-    margin-bottom: 1rem;
-    width: 100%;
-    border-top-left-radius: 1rem;
+.Image__Area {
+  margin-bottom: 1rem;
+  width: 100%;
+  border-top-left-radius: 1rem;
 }
-.Image{
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+.Image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
-.Info__Area{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
+.Info__Area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.Game__Title{
-    border-bottom: 1px solid #8f8f8f;
-    width: 100%;
-    text-align: center;
-    font-weight: 700;
+.Game__Title {
+  border-bottom: 1px solid #8f8f8f;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
 }
 
-.Old__Price{
-    text-decoration: line-through;
-    font-size: 1.3rem;
-    margin-top: .4rem;
+.Old__Price {
+  text-decoration: line-through;
+  font-size: 1.3rem;
+  margin-top: 0.4rem;
 }
-.New__Price{
-    color: #F2A72D;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: .4rem;
-}
-
-.Details__Button{
-    box-sizing: border-box;
-    background-color: #383838;
-    width: 100%;
-    padding: .5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    text-align: center;
-    color: #f8f8f8;
-    font-weight: 700;
-    font-size: 1.4rem;
-    margin-top: .5rem;
-    transition: all 0.3s linear;
+.New__Price {
+  color: #f2a72d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
 }
 
-.Details__Button:hover{
-    background-color: #8f8f8f;
+.Details__Button {
+  box-sizing: border-box;
+  background-color: #383838;
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  text-align: center;
+  color: #f8f8f8;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s linear;
+}
+
+.Details__Button:hover {
+  background-color: #8f8f8f;
+}
+.Like__Button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }

@@ -22,8 +22,6 @@ const FilterArea = (props) => {
 
     const classes = useStyles();
     const {handleSetSortStatus, sortState} = useContext(ContextProvider)
-    console.log(sortState)
-    console.log(ContextProvider)
     return (
         <div>
             <FormControl className={classes.formControl}>

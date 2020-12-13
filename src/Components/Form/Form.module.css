@@ -1,0 +1,19 @@
+.Form__Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+.Form__Input {
+  margin: 2rem 0;
+  width: 100%;
+}
+.Button {
+  display: inline-block;
+  max-width: 100px;
+}
+@media (max-width: 768px) {
+  .Form__Container {
+    width: 90%;
+  }
+}
