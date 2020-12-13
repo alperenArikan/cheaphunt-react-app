@@ -11,6 +11,7 @@ import Context from "./Context/Context"
 import Login from "./Pages/Login/Login"
 import Signup from "./Pages/SignUp/Signup"
 import Profile from "./Pages/Profile/Profile"
+import Reset from "./Pages/Reset/Reset"
 const App = () => {
 
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Login path="/Login"></Login>
           <Signup path="/Signup"></Signup>
           <Profile path="/profile/:userid"></Profile>
+          <Reset path="/Reset"></Reset>
         </Router>
         
       </div>

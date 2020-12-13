@@ -3,8 +3,23 @@ import Form from "../../Components/Form/Form"
 import style from "./Login.module.css"
 import firebase,{db} from "../../firebase"
 import { Alert,AlertTitle } from '@material-ui/lab';
-import {Redirect} from "@reach/router"
+import {Redirect,Link} from "@reach/router"
 import {ContextProvider} from "../../Context/Context"
+
+// firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+// .then(function() {
+//   var provider = new firebase.auth.GoogleAuthProvider();
+
+//   return firebase.auth().signInWithRedirect(provider);
+// })
+// .catch(function(error) {
+//   // Handle Errors here.
+//   var errorCode = error.code;
+//   var errorMessage = error.message;
+// });
+
+
+
 
 const Signup = () => {
     const {didLogIn,setLogin,user,setUser,setUserProfileData} = useContext(ContextProvider)
@@ -47,6 +62,7 @@ const Signup = () => {
         </Alert>
         : ""}
         <Form page="Login" submitHandler={submitHandler}></Form>
+        <Link to="/Reset">Forgot My Password</Link>
      </div>
 
      {didLogIn ? <Redirect to="/" noThrow  /> : ""}
