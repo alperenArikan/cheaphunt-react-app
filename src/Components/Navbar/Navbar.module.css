@@ -1,47 +1,44 @@
-.Navbar{
-    width: 100%;
-    background-color: #383838;
-
-
+.Navbar {
+  width: 100%;
+  background-color: #383838;
 }
 
-.Navbar__Inner{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto ;
-    padding: 1rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+.Navbar__Inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.Logo__Container{
-    color: #F9F9F9;
+.Logo__Container {
+  color: #f9f9f9;
 }
-.Logo{
-    font-size: 1.5rem;
-    font-family: monospace;
-    letter-spacing: 3px;
-}
-
-.Navbar__Ul{
-    display: flex;
+.Logo {
+  font-size: 1.5rem;
+  font-family: monospace;
+  letter-spacing: 3px;
 }
 
-.List__Item{
-    margin-left: .5rem;
-    list-style-type: none;
-
+.Navbar__Ul {
+  display: flex;
 }
 
-.List__Link{
-    text-decoration: none;
-    color:#F9F9F9 ;
-    padding: .5rem;
-    border-radius: 10px;
-    transition: all .3s linear;
+.List__Item {
+  margin-left: 0.5rem;
+  list-style-type: none;
 }
-.List__Link:hover{
-background-color: #535353;
+
+.List__Link {
+  text-decoration: none;
+  color: #f9f9f9;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.List__Link:hover {
+  background-color: #535353;
 }

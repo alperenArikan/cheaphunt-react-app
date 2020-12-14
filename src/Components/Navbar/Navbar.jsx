@@ -2,8 +2,17 @@ import React,{useContext} from 'react';
 import style from "./Navbar.module.css"
 import {Router,Link} from "@reach/router";
 import {ContextProvider} from "../../Context/Context"
+import firebase from "../../firebase"
 const Navbar = () => {
-    const {didLogIn,user} = useContext(ContextProvider)
+    const {currentUser,setCurrentUser,setUserProfileData} = useContext(ContextProvider)
+    const signOut =()=>{
+        firebase.auth().signOut().then(function() {
+        setCurrentUser(null);
+        setUserProfileData(null)
+        }).catch(function(error) {
+        // An error happened.
+});
+    }
     return (
         <div className={style.Navbar}>
             <div className={style.Navbar__Inner}>
@@ -17,12 +26,17 @@ const Navbar = () => {
                                 <p className={style.List__Link}>Home</p>    
                             </Link>
                         </li>
-                       {user ?
+                       {currentUser ? 
+                       <React.Fragment>
                        <li className={style.List__Item}>
-                            <Link to={`profile/${user.user.uid}`}>
+                            <Link to={`profile/${currentUser.uid}`}>
                                 <p className={style.List__Link}>Profile</p>    
                             </Link>
                         </li>
+                         <li className={style.List__Item}>
+                                <p onClick={signOut} className={style.List__Link}>Sign Out</p>    
+                        </li>
+                        </React.Fragment>
                        :
                        <React.Fragment>
                         <li className={style.List__Item}>

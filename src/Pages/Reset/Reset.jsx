@@ -1,13 +1,17 @@
-import React,{useState, useContext} from 'react';
+import React,{useState} from 'react';
 import Form from "../../Components/Form/Form"
 import style from "./Reset.module.css"
 import firebase from "../../firebase"
 
-import {Redirect,Link} from "@reach/router"
+import {Redirect} from "@reach/router"
 
 
 const Reset = () => {
+
+
     const [didComplete,setComplete] = useState(false)
+
+
     const submitHandler = (e,email)=>{
         var auth = firebase.auth();
 
@@ -19,6 +23,8 @@ const Reset = () => {
         });
         e.preventDefault();
     }
+
+
     return (
  <React.Fragment>
      <div className={style.Container}>

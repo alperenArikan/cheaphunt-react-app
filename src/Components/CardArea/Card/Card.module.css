@@ -2,6 +2,7 @@
   width: 33%;
   padding: 1rem;
   min-width: 300px;
+  position: relative;
 }
 .Game__Card {
   width: 100%;
@@ -69,10 +70,4 @@
 
 .Details__Button:hover {
   background-color: #8f8f8f;
-}
-.Like__Button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
 }

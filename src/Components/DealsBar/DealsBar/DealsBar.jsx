@@ -10,6 +10,7 @@ const DealsBar = (props) => {
         axios.get("https://www.cheapshark.com/api/1.0/deals")
         .then(response=>setDealsState(response.data))
         .catch(err=> console.log(err))
+
     },[])
 
     const  Cards = dealsState.map(x=>{

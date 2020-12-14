@@ -9,7 +9,7 @@ const SearchArea = () => {
     const [searchValue, setSearchValue] = useState("")
     const [searchedHappened, setSearchHappened] = useState(false)
     const [searchFocused, setSearchFocused] = useState(false);
-    // const [isMouseOnSearch, setMouseOnSearch]= useState(false);
+
     // --------------------- Search Handle-------------------------
     const handleSearchChange = async (e) => {
       const targetValue = e.target.value;
@@ -40,9 +40,7 @@ const SearchArea = () => {
     }
     const mouseLeaveHandler=()=>{
         isMouseOnSearch = false 
-        // if(searchFocused === true){
-        //     setSearchFocused(false)
-        // }
+
     }
 
     
@@ -59,7 +57,6 @@ const SearchArea = () => {
             type="text" />
           </form>
 
-          {/* When search happen render list and map data */}
           {searchFocused && searchValue.length>0&& searchedHappened ?
             <SearchResults 
             mouseEnterHandler={mouseEnterHandler} 

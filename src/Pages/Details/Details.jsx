@@ -32,11 +32,9 @@ const Details = (props) => {
                     <img className={style.Big__Image} src={mainImage} alt=""/>
                 </div> 
                 <div className={style.Mini__Image__Area}>
-                    {
-                        
+                    {  
                     miniImages.map(x=>{
                     return(<img onClick={(e)=>mainImageChangeHandler(e.target.src)} className={style.Mini__Image} key={Math.random()}src={x.image} alt=""/>)  
-
                     })
                     }
                 </div>
@@ -44,13 +42,10 @@ const Details = (props) => {
                     <div className={style.Info__Left}>
                         <h2 className={style.Game__Title}>{gameInfo.name}</h2>
                     </div>
-
                     <div className={style.Info__Right}>
-
                         <span className={style.Release__Date}>Release Date: {gameInfo.released}</span>
                         <span className={style.Score}>Rating: {Math.floor(gameInfo.score)}%</span>
                         <div className={style.Tag__Area}>
-
                             {
                                 tags.length >0 ?tags.map(x=>{
                                     return(
@@ -60,12 +55,8 @@ const Details = (props) => {
                                     )
                                 }):""
                             } 
-
                         </div>
-
-
                     </div>
-                    
                 </div>    
             </div>
         </React.Fragment>

@@ -1,10 +1,15 @@
-import React , {createContext, useState} from 'react';
+import React , {createContext, useState,useEffect} from 'react';
+import {db} from "../firebase"
 export const ContextProvider = createContext();
 
 const Context = ({children}) => {
+    
+    
     // User Logged in ? 
     const [didLogIn, setLogin] = useState(false)
-    const [user,setUser] = useState(null)
+    const [currentUser,setCurrentUser] = useState(null)
+
+
     // Filter State Functions 
     const [sortState, setSortState] =  useState("Deal Rating")
     const handleSetSortStatus = (event)=>{
@@ -13,6 +18,7 @@ const Context = ({children}) => {
             const targetValue = event.target.value;
               setSortState(targetValue)
     }
+
 
     // Page Number State Functions
     const [pageNumber , setPageNumber] = useState(0);
@@ -31,14 +37,35 @@ const Context = ({children}) => {
         setPageNumber(currentPage);
 
     }
+
     //Game Cards
      const [gameCards, setGameCards] = useState([]);
 
+
     //User Profile Data
     const [userProfileData,setUserProfileData]= useState(null);
+    
+    
+    //Favorites Handler
+    const addFavorites = (id)=>{
+    var favoritesRef = db.collection("users").doc(userProfileData.userid);
+    if(userProfileData.favorites.includes(id)){
+        let newFavs = userProfileData.favorites.filter(x=>{
+            return x != id
+        })
+        favoritesRef.update({
+            favorites:[...newFavs]
+        });
+        return;
+    }
+    return favoritesRef.update({
+        favorites:[...userProfileData.favorites, id]
+    })
+
+    }  
 
     return (
-        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,setGameCards,gameCards,didLogIn,setLogin,setUser,user,userProfileData,setUserProfileData}}>
+        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,setGameCards,gameCards,didLogIn,setLogin,setCurrentUser,currentUser,userProfileData,setUserProfileData , addFavorites}}>
             {children}
         </ContextProvider.Provider>
     );
