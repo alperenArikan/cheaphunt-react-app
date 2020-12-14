@@ -1,7 +1,9 @@
+import { Redirect } from '@reach/router';
 import React,{useContext, useEffect,useState} from 'react';
 import {ContextProvider} from "../../Context/Context"
+import {AuthContextProvider} from "../../Context/AuthContext"
 const Profile = ({userid}) => {
-
+const {currentUser} =  useContext(AuthContextProvider)
 
     const {userProfileData} = useContext(ContextProvider)
     const [favorites, setFavorites] = useState()
@@ -25,7 +27,9 @@ const Profile = ({userid}) => {
     }, [userProfileData]);
 
 
-    
+    if(!currentUser){
+        return <Redirect to="/" noThrow />
+    }
     return (
         <React.Fragment>
             <h1> Your Favorites </h1>

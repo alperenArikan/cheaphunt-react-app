@@ -5,8 +5,10 @@ import Loading from "../../assets/Bean Eater-0.9s-237px.svg"
 import axios from 'axios';
 import {ContextProvider} from "../../Context/Context"
 import firebase, {db} from "../../firebase"
+import {AuthContextProvider} from "../../Context/AuthContext"
 const CardArea = (props) => {
-    const {sortState, pageNumber, handlePageDown,handlePageUP,gameCards,setGameCards,didLogIn,currentUser,setCurrentUser,setUserProfileData} = useContext(ContextProvider);
+    const {sortState, pageNumber, handlePageDown,handlePageUP,gameCards,setGameCards,setUserProfileData } = useContext(ContextProvider);
+    const {currentUser} = useContext(AuthContextProvider)
     useEffect(()=>{
         setGameCards([])
         axios.get(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15&pageSize=12&pageNumber=${pageNumber}&sortBy=${sortState}`)
@@ -14,12 +16,6 @@ const CardArea = (props) => {
 
 
     },[pageNumber,sortState])
-
-            useEffect(async () => {
-            firebase.auth().onAuthStateChanged(async (user) => {
-            setCurrentUser(user)
-            })
-        }, []);
         useEffect(()=>{
         if(currentUser){
         db.collection("users").doc(currentUser.uid)

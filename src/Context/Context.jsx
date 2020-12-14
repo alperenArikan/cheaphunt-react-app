@@ -1,14 +1,11 @@
 import React , {createContext, useState,useEffect} from 'react';
-import {db} from "../firebase"
+import firebase,{db} from "../firebase"
 export const ContextProvider = createContext();
 
 const Context = ({children}) => {
     
     
     // User Logged in ? 
-    const [didLogIn, setLogin] = useState(false)
-    const [currentUser,setCurrentUser] = useState(null)
-
 
     // Filter State Functions 
     const [sortState, setSortState] =  useState("Deal Rating")
@@ -65,7 +62,7 @@ const Context = ({children}) => {
     }  
 
     return (
-        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,setGameCards,gameCards,didLogIn,setLogin,setCurrentUser,currentUser,userProfileData,setUserProfileData , addFavorites}}>
+        <ContextProvider.Provider value={{handleSetSortStatus,sortState,pageNumber,handlePageUP,handlePageDown,setGameCards,gameCards,userProfileData,setUserProfileData,addFavorites}}>
             {children}
         </ContextProvider.Provider>
     );

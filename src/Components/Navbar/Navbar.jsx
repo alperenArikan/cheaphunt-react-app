@@ -2,9 +2,11 @@ import React,{useContext} from 'react';
 import style from "./Navbar.module.css"
 import {Router,Link} from "@reach/router";
 import {ContextProvider} from "../../Context/Context"
+import {AuthContextProvider} from "../../Context/AuthContext"
 import firebase from "../../firebase"
 const Navbar = () => {
-    const {currentUser,setCurrentUser,setUserProfileData} = useContext(ContextProvider)
+    const {setUserProfileData} = useContext(ContextProvider)
+    const {currentUser,setCurrentUser} = useContext(AuthContextProvider)
     const signOut =()=>{
         firebase.auth().signOut().then(function() {
         setCurrentUser(null);

@@ -5,30 +5,15 @@ import firebase,{db} from "../../firebase"
 import { Alert} from '@material-ui/lab';
 import {Redirect,Link} from "@reach/router"
 import {ContextProvider} from "../../Context/Context"
+import {AuthContextProvider} from "../../Context/AuthContext"
 
 
+const Login = () => {
+    const {login,error,currentUser,setCurrentUser} = useContext(AuthContextProvider)
 
-const Signup = () => {
-    const {setCurrentUser,currentUser} = useContext(ContextProvider)
-    const [error,setError]=useState("");
-        //login handler
-        const submitHandler = (e,email,password)=>{
-            firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((user) => {
-                setCurrentUser(user)
-            })
-            .catch((error) => {
-                setError({
-                    code:error.code,
-                    message:error.message
-                })
-                setTimeout(() => {
-                    setError("");
-                }, 4000);
-            });
-        e.preventDefault();
+    if(currentUser){
+        return <Redirect to="/" noThrow  />
     }
-
     return (
  <React.Fragment>
      <div className={style.Container}>
@@ -38,12 +23,11 @@ const Signup = () => {
             {error.message}
         </Alert>
         : ""}
-        <Form page="Login" submitHandler={submitHandler}></Form>
+        <Form page="Login" submitHandler={login}></Form>
         <Link to="/Reset">Forgot My Password</Link>
      </div>
-     {currentUser ? <Redirect to="/" noThrow  /> : ""}
  </React.Fragment>
     );
 }
 
-export default Signup;
+export default Login;
