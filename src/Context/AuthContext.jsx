@@ -15,16 +15,10 @@ const AuthContext = ({children}) => {
             })
             return unsubscribe
         }, [currentUser]);
-    //     useEffect(()=>{
-    //         setAuthLoading(false)
-    // },[currentUser])
 
     const login = (e,email,password)=>{
         setAuthLoading(true)
             firebase.auth().signInWithEmailAndPassword(email, password)
-        // .then((user) => {
-        //     // setCurrentUser(user)
-        // })
         .catch((error) => {
             setError({
                 code:error.code,

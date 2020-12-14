@@ -4,9 +4,9 @@ import Card from "./Card/Card"
 import Loading from "../../assets/Bean Eater-0.9s-237px.svg"
 import axios from 'axios';
 import {ContextProvider} from "../../Context/Context"
-import firebase, {db} from "../../firebase"
+import {db} from "../../firebase"
 import {AuthContextProvider} from "../../Context/AuthContext"
-const CardArea = (props) => {
+const CardArea = () => {
     const {sortState, pageNumber, handlePageDown,handlePageUP,gameCards,setGameCards,setUserProfileData } = useContext(ContextProvider);
     const {currentUser} = useContext(AuthContextProvider)
     useEffect(()=>{

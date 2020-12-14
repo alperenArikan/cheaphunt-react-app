@@ -1,15 +1,13 @@
-import React,{useState, useContext} from 'react';
+import React,{useContext} from 'react';
 import Form from "../../Components/Form/Form"
 import style from "./Login.module.css"
-import firebase,{db} from "../../firebase"
 import { Alert} from '@material-ui/lab';
 import {Redirect,Link} from "@reach/router"
-import {ContextProvider} from "../../Context/Context"
 import {AuthContextProvider} from "../../Context/AuthContext"
 
 
 const Login = () => {
-    const {login,error,currentUser,setCurrentUser} = useContext(AuthContextProvider)
+    const {login,error,currentUser} = useContext(AuthContextProvider)
 
     if(currentUser){
         return <Redirect to="/" noThrow  />
@@ -24,7 +22,7 @@ const Login = () => {
         </Alert>
         : ""}
         <Form page="Login" submitHandler={login}></Form>
-        <Link to="/Reset">Forgot My Password</Link>
+        <Link to="/reset">Forgot My Password</Link>
      </div>
  </React.Fragment>
     );

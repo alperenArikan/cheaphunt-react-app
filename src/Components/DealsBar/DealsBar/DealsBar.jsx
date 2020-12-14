@@ -3,7 +3,7 @@ import style from "./DealsBar.module.css"
 import axios from "axios";
 import OfferCard from "../OfferCards/OfferCards"
 
-const DealsBar = (props) => {
+const DealsBar = () => {
     const [dealsState, setDealsState] = useState([])
 
     useEffect(()=>{

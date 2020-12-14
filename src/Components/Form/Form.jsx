@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Input from '@material-ui/core/Input';
 import style from "./Form.module.css"
 import Button from '@material-ui/core/Button';
-import firebase from "../../firebase"
 const Form = ({submitHandler,page}) => {
     const [email, setEmail] = useState("")
     const [password ,setPassword] =useState("");

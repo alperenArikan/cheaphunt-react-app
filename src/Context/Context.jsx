@@ -1,12 +1,9 @@
-import React , {createContext, useState,useEffect} from 'react';
-import firebase,{db} from "../firebase"
+import React , {createContext,useState} from 'react';
+import {db} from "../firebase"
 export const ContextProvider = createContext();
 
 const Context = ({children}) => {
     
-    
-    // User Logged in ? 
-
     // Filter State Functions 
     const [sortState, setSortState] =  useState("Deal Rating")
     const handleSetSortStatus = (event)=>{

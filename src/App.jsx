@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Navbar from "./Components/Navbar/Navbar";
 import DealsBar from "./Components/DealsBar/DealsBar/DealsBar";
 
@@ -11,9 +11,10 @@ import Login from "./Pages/Login/Login"
 import Signup from "./Pages/SignUp/Signup"
 import Profile from "./Pages/Profile/Profile"
 import Reset from "./Pages/Reset/Reset"
-
+import NotFound from "./Pages/Default/NotFound"
+import {AuthContextProvider} from "./Context/AuthContext"
 const App = () => {
-
+const {currentUser} = useContext(AuthContextProvider)
 
   return (
     <React.Fragment>
@@ -24,10 +25,11 @@ const App = () => {
         <Router>
           <Home path="/"></Home>
           <Details path="/details/:title"></Details>
-          <Login path="/Login"></Login>
-          <Signup path="/Signup"></Signup>
-          <Profile path="/profile/:userid"></Profile>
-          <Reset path="/Reset"></Reset>
+          <Login path="/login"></Login>
+          <Signup path="/signup"></Signup>
+          <Profile path="/profile"></Profile>
+          <Reset path="/reset"></Reset>
+          <NotFound default />
         </Router>
       </div>
     </React.Fragment>

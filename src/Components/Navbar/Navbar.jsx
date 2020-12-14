@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import style from "./Navbar.module.css"
-import {Router,Link} from "@reach/router";
+import {Link} from "@reach/router";
 import {ContextProvider} from "../../Context/Context"
 import {AuthContextProvider} from "../../Context/AuthContext"
 import firebase from "../../firebase"
@@ -30,8 +30,9 @@ const Navbar = () => {
                         </li>
                        {currentUser ? 
                        <React.Fragment>
-                       <li className={style.List__Item}>
-                            <Link to={`profile/${currentUser.uid}`}>
+
+                        <li className={style.List__Item}>
+                            <Link to={`profile`}>
                                 <p className={style.List__Link}>Profile</p>    
                             </Link>
                         </li>
@@ -42,12 +43,12 @@ const Navbar = () => {
                        :
                        <React.Fragment>
                         <li className={style.List__Item}>
-                            <Link to="/Login">
+                            <Link to="login">
                                 <p className={style.List__Link}>Login</p>    
                             </Link>
                         </li>
                         <li className={style.List__Item}>
-                            <Link to="/Signup">
+                            <Link to="signup">
                                 <p className={style.List__Link}>Sign Up</p>    
                             </Link>
                         </li>

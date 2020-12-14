@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import style from "./SearchResults.module.css"
 import steamImg from "../../../assets/steam.png"
 const SearchResults = (props) => {
