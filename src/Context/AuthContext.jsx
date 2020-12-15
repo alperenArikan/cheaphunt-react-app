@@ -20,6 +20,7 @@ const AuthContext = ({children}) => {
         setAuthLoading(true)
             firebase.auth().signInWithEmailAndPassword(email, password)
         .catch((error) => {
+            setAuthLoading(false)
             setError({
                 code:error.code,
                 message:error.message
@@ -46,6 +47,7 @@ const AuthContext = ({children}) => {
            })
         // if it gives error, set a error object state and show it in an alert component. Remove alert after 2sec
         .catch((error) => {
+            setAuthLoading(false)
             setError({
                 code:error.code,
                 message:error.message
